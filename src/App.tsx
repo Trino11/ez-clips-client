@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import { invoke } from '@tauri-apps/api/core';
 import './App.css';
+import CheckForUpdates from './Updater';
 
 function App() {
   const [greetMsg, setGreetMsg] = useState('');
@@ -44,6 +45,7 @@ function App() {
         <button type="submit">Greet</button>
       </form>
       <p>{greetMsg}</p>
+      <button onClick={() => CheckForUpdates()}>Check for updates</button>
     </main>
   );
 }

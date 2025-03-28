@@ -7,6 +7,8 @@ import prettier from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
 
 export default defineConfig([
+  tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
   {
     ignores: [
       'node_modules/**', // Ignore node_modules
@@ -14,12 +16,14 @@ export default defineConfig([
       'build/**', // Ignore build output
       '**/*.test.js', // Ignore test files
       'src-tauri/**', // Ignore Tauri source
+      'package.lock.json', // Ignore lock file
     ],
   },
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
-    languageOptions: { globals: globals.browser },
+    // languageOptions: { globals: globals.browser },
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
   },
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
@@ -32,6 +36,8 @@ export default defineConfig([
     extends: ['js/recommended', prettier],
     rules: {
       'prettier/prettier': 'error', // Enforce Prettier rules as ESLint errors
+      'react/react-in-jsx-scope': 'off', // React is always in scope
+      'prefer-const': ['error', { ignoreReadBeforeAssign: true }],
     },
   },
   {
@@ -41,6 +47,4 @@ export default defineConfig([
       },
     },
   },
-  tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
 ]);
