@@ -25,5 +25,5 @@ dist-ssr
 *.sw?
 
 # Keys
-updater.key
+.tauri/*.key
 .env

@@ -35,7 +35,7 @@
   },
   "plugins": {
     "updater": {
-      "pubkey": "CONTENT FROM PUBLICKEY.PEM",
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDcyNzhDMzc0MEVEMjU0Q0YKUldUUFZOSU9kTU40Y2pNRXoyb1BST0loM21XWjg0YkxTNURRSUEzNEZxRjFjYTlacmhqalkzL0gK",
       "endpoints": [
         "https://github.com/Trino11/ez-clips-client/releases/latest/download/latest.json"
       ],
