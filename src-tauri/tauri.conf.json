@@ -12,9 +12,9 @@
   "app": {
     "windows": [
       {
-        "title": "ez-clips-client",
-        "width": 800,
-        "height": 600
+        "title": "Ez Clips",
+        "width": 1280,
+        "height": 720
       }
     ],
     "security": {
