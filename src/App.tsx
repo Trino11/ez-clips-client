@@ -15,7 +15,7 @@ function App() {
 
   return (
     <main className="container">
-      <h1>Welcome to Tauri + React</h1>
+      <h1 className="font-extrabold text-3xl">Welcome to Tauri + React</h1>
 
       <div className="row">
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
@@ -45,6 +45,8 @@ function App() {
         <button type="submit">Greet</button>
       </form>
       <p>{greetMsg}</p>
+
+      <h1 className="font-bold text-3xl underline">Tailwind is working!</h1>
 
       <UpdateModal />
     </main>
