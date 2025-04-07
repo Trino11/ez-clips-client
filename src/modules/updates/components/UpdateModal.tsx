@@ -4,7 +4,7 @@ import {
   downloadAndInstallUpdate,
   getLatestUpdate,
   UpdateType,
-} from './UpdateHandler';
+} from '../lib/UpdateHandler';
 import { getVersion } from '@tauri-apps/api/app';
 import { Update } from '@tauri-apps/plugin-updater';
 import './UpdateModal.css';
