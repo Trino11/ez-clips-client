@@ -7,7 +7,9 @@ export const useDiscordLogin = () => {
   const [jwtToken, setJwtToken] = useState<string | null>(null);
 
   const LOCAL_AUTH_BACKEND_URL = 'http://localhost:5173';
-  const wantToUseLocalAuthBackend = window.__TAURI_INTERNALS__ && false;
+  const wantToUseLocalAuthBackend =
+    window.__TAURI_INTERNALS__ &&
+    import.meta.env.VITE_USE_LOCAL_AUTH_BACKEND === 'true';
 
   const openDiscordLogin = async () => {
     const redirect_url = `${import.meta.env.VITE_API_URL}/auth/discord?redirect_uri=${encodeURIComponent(
