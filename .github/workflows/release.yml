@@ -23,6 +23,7 @@ jobs:
             args: ''
 
     runs-on: ${{ matrix.platform }}
+    environment: production # Reference the environment here
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -68,6 +69,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          VITE_API_URL: ${{ vars.VITE_API_URL }} # Use environment variable
+          VITE_USE_LOCAL_AUTH_BACKEND: ${{ vars.VITE_USE_LOCAL_AUTH_BACKEND }} # Use environment variable
         with:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: 'v__VERSION__'
